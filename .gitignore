@@ -14,3 +14,5 @@ yarn-error.log
 /.idea
 /.vscode
 /note.txt
+/public/images
+/public/favicon
