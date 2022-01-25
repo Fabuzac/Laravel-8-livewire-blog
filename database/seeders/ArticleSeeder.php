@@ -13,7 +13,8 @@ class ArticleSeeder extends Seeder
      *
      * @return void
      */
-    public function run() {
+    public function run() 
+    {
 
         $faker = Factory::create();
 
@@ -24,7 +25,5 @@ class ArticleSeeder extends Seeder
                 'content' => $faker->text($maxNbChars = 600),
             ]);
         }
-
-        
     }
 }
