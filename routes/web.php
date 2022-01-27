@@ -20,3 +20,5 @@ Route::get('/articles', [App\Http\Controllers\MainController::class, 'index'])->
 
 Route::get('/articles/{slug}', [App\Http\Controllers\MainController::class, 'show'])->name('article');
 
+Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
+

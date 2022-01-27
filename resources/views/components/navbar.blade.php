@@ -14,12 +14,12 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="#">Features</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">Pricing</a>
-          </li>
+          </li>          
           <li class="nav-item">
             <a class="nav-link" href="#">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('shop.index') }}">Shop</a>
           </li>
           
       </div>
