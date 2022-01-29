@@ -20,9 +20,25 @@
           </li>
           <li class="nav-item">
             <a class="nav-link" href="{{ route('shop.index') }}">Shop</a>
-          </li>
-          
+          </li>          
       </div>
+
+      <ul class="navbar-nav me-auto">
+        @if (Auth::user())
+          <li class="nav-item">
+            <a class="nav-link" href="#">Logout</a>
+          </li>
+        @else
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('login') }}">Login</a>
+          </li> 
+
+          <li class="nav-item">
+            <a class="nav-link" href="{{ route('register') }}">Create Account</a>
+          </li>                
+        @endif     
+      </ul>
+
     </div>
 </nav>
   
