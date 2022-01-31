@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container-fluid">
-      <a class="navbar-brand" href="/"><i class="fas fa-home"></i> Home</a>
+      <a class="navbar-brand" href="{{ route('home') }}"><i class="fas fa-home"></i> Home</a>
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarColor03" aria-controls="navbarColor03" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
@@ -24,11 +24,8 @@
       </div>
 
       <ul class="navbar-nav me-auto">
-        @if (Auth::user())
-          <li class="nav-item">
-            <a class="nav-link" href="#">Logout</a>
-          </li>
-        @else
+
+        @if (!Auth::user())
           <li class="nav-item">
             <a class="nav-link" href="{{ route('login') }}">Login</a>
           </li> 
@@ -36,7 +33,20 @@
           <li class="nav-item">
             <a class="nav-link" href="{{ route('register') }}">Create Account</a>
           </li>                
-        @endif     
+        @else        
+        
+          <li class="nav-item">            
+            <a class="nav-link"
+                href="{{ route('logout') }}"
+                onclick="event.preventDefault(); document.getElementById('logout-form').submit();"
+            >
+                {{ __('Logout') }}
+            </a>
+            <form id="logout-form" method="POST" action="{{ route('logout') }}">
+                @csrf            
+            </form>
+        </li>
+        @endif
       </ul>
 
     </div>

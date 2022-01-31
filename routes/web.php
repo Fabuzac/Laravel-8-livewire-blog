@@ -14,9 +14,9 @@ use App\Http\Controllers\MainController;
 | contains the "web" middleware group. Now create something great!
 |
 */
+Auth::routes();
 
-
-Route::get('/', [App\Http\Controllers\MainController::class, 'home']);
+Route::get('/', [App\Http\Controllers\MainController::class, 'home'])->name('home');
 
 Route::get('/articles', [App\Http\Controllers\MainController::class, 'index'])->name('articles');
 
@@ -24,6 +24,6 @@ Route::get('/articles/{slug}', [App\Http\Controllers\MainController::class, 'sho
 
 Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name('shop.index');
 
-Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
+// Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
