@@ -25,6 +25,7 @@ class CreateUsersTable extends Migration
         });
     }
 
+    // ->nullable('USER')
     /**
      * Reverse the migrations.
      *
