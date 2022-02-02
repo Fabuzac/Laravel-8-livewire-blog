@@ -26,4 +26,8 @@ Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name
 
 
 
+Route::get('/admin/articles', [App\Http\Controllers\ArticleController::class, 'index'])->middleware('admin');
+
+
+
 // Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
