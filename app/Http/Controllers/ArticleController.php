@@ -16,7 +16,7 @@ class ArticleController extends Controller
     {
         $articles = Article::paginate(10);
 
-        return view('article.index', [
+        return view('article.index', [ 
             'articles' => $articles,
         ]);
     }
