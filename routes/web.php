@@ -26,6 +26,7 @@ Route::get('/shop', [App\Http\Controllers\ShopController::class, 'index'])->name
 
 Route::get('/admin/articles', [App\Http\Controllers\ArticleController::class, 'index'])->middleware('admin')->name('articles.index');
 Route::get('/admin/articles/create', [App\Http\Controllers\ArticleController::class, 'create'])->middleware('admin')->name('articles.create');
+Route::post('/admin/articles/store', [App\Http\Controllers\ArticleController::class, 'store'])->middleware('admin')->name('articles.store');
 
 
 

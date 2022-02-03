@@ -3,7 +3,7 @@
 @section('content')
     <div class="container">
         <h1 class="display-5 text-center">New article</h1>
-        <form class="alert alert-dismissible alert-warning" method="POST" action="#">
+        <form class="alert alert-dismissible alert-warning" method="POST" action="{{ route('articles.store') }}">
             @csrf
             <div class="col-12">
                 <div class="form-group">
@@ -31,10 +31,15 @@
                         <textarea class="form-control w-100" 
                         placeholder="Write your article"
                         name="content" 
-                        id="content" 
+                        id="tinycme-editor" 
                         cols="30" 
                         rows="7"
                         ></textarea>
+                        <script>
+                            tinymce.init({
+                              selector: '#tinycme-editor'
+                            });
+                          </script>
                     </fieldset>
                 </div>
             </div> 

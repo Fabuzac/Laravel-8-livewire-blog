@@ -40,7 +40,12 @@ class ArticleController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        Article::create([
+            'title' => $request->input('title'),
+            'subtitle' => $request->input('subtitle'),
+            'content' => $request->input('content'),
+        ]);
+        return redirect()->route('articles.index');
     }
 
     /**

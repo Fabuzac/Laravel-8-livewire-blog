@@ -18,6 +18,8 @@
     <!-- Bootstrap CSS -->
     <link href="{{ asset('css/bootstrap.min.css') }}" rel="stylesheet">
     <link href="{{ asset('css/style.css') }}" rel="stylesheet">
+    <!-- TINY CLOUD // text editor -->
+    <script src="https://cdn.tiny.cloud/1/no-api-key/tinymce/5/tinymce.min.js" referrerpolicy="origin"></script>
     <!-- FONTAWESOME JS -->
     <script src="{{ asset('lib/fontawesome.js') }}" defer></script>
     @yield('head')
