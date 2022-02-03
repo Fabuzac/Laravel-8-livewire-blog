@@ -3,6 +3,9 @@
 @section('content')
     <div class="container">
         <h1 class="text-center m-2 display-5">Articles</h1>
+        <div class="d-flex justify-content-center">
+            <a class="btn btn-info m-4" href="{{ route('articles.create') }}"><i class="mx-1 fas fa-plus"></i> Add new article</a>
+        </div>
         <table class="table table-hover">
             <thead>
                 <tr class="table-active">
@@ -14,10 +17,12 @@
             </thead>
             <tbody>               
                 @foreach ($articles as $article)
+                          
                     <tr class="table-active">                        
                         <td> {{ $article->id}} </td>
                         <td> {{ $article->title}} </td>
-                        <td> {{ $article->created_at}} </td>
+                        <td> {{ $article->dateFormatted() }} </td>
+                        {{-- <td> {{ date('d-M-Y', strtotime($article->created_at)) }} </td> --}}
                         <td class="d-flex"> 
                             <a href="#" class="btn btn-info mx-3">Edit</a> 
                             <a href="#" class="btn btn-delete mx-3">Delete</a> 
