@@ -25,8 +25,15 @@
     @yield('head')
 </head>
 <body>
+    {{-- TOP NAV BAR --}}
     @include('components.navbar')
 
+    {{-- FLASH MESSAGE IF ARTICLE CREATED --}}
+    <div class="container justify-content-center">
+        @include('components.flash')
+    </div>
+    
+    {{-- MAIN CONTENT --}}
     <div id="app">        
 
         @yield('content')

@@ -5,3 +5,12 @@
 .btn-delete {
     background-color: rgb(243, 39, 39);
 }
+
+.invalid-feedback {
+    color: #fd1414 !important;
+}
+
+.flash-message {
+    width: 70%;
+    margin: auto;
+}

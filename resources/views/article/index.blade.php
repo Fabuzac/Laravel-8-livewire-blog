@@ -24,8 +24,14 @@
                         <td> {{ $article->dateFormatted() }} </td>
                         {{-- <td> {{ date('d-M-Y', strtotime($article->created_at)) }} </td> --}}
                         <td class="d-flex"> 
+                            <div>                            
+                                <a href="{{ route('article', $article->slug) }}" 
+                                   type="link" 
+                                   class="btn btn-light">Check Article
+                                </a>
+                            </div> 
                             <a href="#" class="btn btn-info mx-3">Edit</a> 
-                            <a href="#" class="btn btn-delete mx-3">Delete</a> 
+                            <a href="#" class="btn btn-delete mx-1">Delete</a>                             
                         </td>
                     </tr>   
                 @endforeach
