@@ -31,9 +31,14 @@
                                 </a>
                             </div> 
                             <a href="#" class="btn btn-info mx-3">Edit</a> 
-                            <a href="#" class="btn btn-delete mx-1">Delete</a>                             
+                            <form action="{{ route('articles.delete', $article->id) }}" method="POST">
+                                @csrf
+                                @method("DELETE")
+                                <button type="submit" class="btn btn-delete">Delete</button>
+                            </form>                   
                         </td>
                     </tr>   
+
                 @endforeach
             </tbody>
         </table>
@@ -42,6 +47,5 @@
                 {{ $articles->links('override.pagination') }}
             </div>
         </div>
-    </div>
-    
+    </div>    
 @endsection

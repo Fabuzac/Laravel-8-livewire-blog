@@ -91,8 +91,11 @@ class ArticleController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy($id)
+    public function delete(Article $article)
     {
-        //
+        dd($article);
+
+        // $article->delete;
+        // return redirect()->route('articles.index')->with('success', "Article Deleted");
     }
 }
