@@ -1,9 +1,9 @@
 @extends('layouts.app')
 
 @section('content')    
-    <div class="">  
+    <div>  
         <a class="m-1 btn btn-warning" href="{{ route('articles') }}"><i class="fas fa-arrow-left"></i> Return</a>    
-        <div class="">
+        <div>
             <div class="m-1">
                 <div class="alert card alert-dismissible alert-warning text-center">
                     <h1 class="display-6">{{ $article->title }}</h1>     

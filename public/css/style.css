@@ -14,3 +14,7 @@
     width: 70%;
     margin: auto;
 }
+
+.modal-content {
+    background-color: #001e1ef0 !important;
+}

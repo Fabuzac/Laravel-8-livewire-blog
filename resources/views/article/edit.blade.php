@@ -2,8 +2,9 @@
 
 @section('content')
     <div class="container">
-        <h1 class="display-5 text-center">New article</h1>
-        <form class="alert alert-dismissible alert-warning" method="POST" action="{{ route('articles.store') }}">
+        <h1 class="display-5 text-center">Edit article {{ $article->id }}</h1>
+        <form class="alert alert-dismissible alert-warning" method="POST" action="{{ route('articles.update', $article->id) }}">
+            @method("PUT")
             @csrf
             {{-- TITLE --}}
             <div class="col-12">
@@ -14,7 +15,7 @@
                                type="text" 
                                name="title" 
                                id="form-control" 
-                               placeholder="Title of the article"
+                               value="{{ $article->title }}"
                                maxlength="150"                                
                                autofocus
                                @error('title') is-invalid  @enderror
@@ -36,7 +37,7 @@
                                type="text" 
                                name="subtitle" 
                                id="form-control" 
-                               placeholder="Subtitle of the article"
+                               value="{{ $article->subtitle }}"
                                maxlength="200"                                  
                                @error('subtitle') is-invalid  @enderror
                         >
@@ -54,15 +55,17 @@
                 <div class="form-group">
                     <fieldset>
                         <label class="form-label text-left display-6" for="content">Content</label>
-                        <textarea class="form-control w-100" 
-                                  placeholder="Write your article"
+                        <textarea class="form-control w-100"                                   
                                   name="content" 
                                   id="tinycme-editor" 
                                   cols="30" 
                                   rows="7"
                                   maxlength="500"                                  
                                   @error('content') is-invalid  @enderror
-                        ></textarea>
+                        >
+                            {{ $article->content }}
+                        </textarea>
+
                         @error('content')
                             <span class="invalid-feedback" role="alert">
                                 <strong>{{ $message }}</strong>

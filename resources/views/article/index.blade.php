@@ -1,5 +1,4 @@
 @extends('layouts.app')
-
 @section('content')
     <div class="container">
         <h1 class="text-center m-2 display-5">Articles</h1>
@@ -30,15 +29,50 @@
                                    class="btn btn-light">Check Article
                                 </a>
                             </div> 
-                            <a href="#" class="btn btn-info mx-3">Edit</a> 
+                            <a href="{{ route('articles.edit', $article->id) }}" class="btn btn-info mx-3">Edit</a> 
+
+                            <button type="button" 
+                                    class="btn btn-delete" 
+                                    onclick="document.getElementById('modal-open-{{ $article->id}}').style.display='block' ">Delete
+                            </button>
+
                             <form action="{{ route('articles.delete', $article->id) }}" method="POST">
                                 @csrf
-                                @method("DELETE")
-                                <button type="submit" class="btn btn-delete">Delete</button>
+                                @method("DELETE")                                
+                                {{-- START MODAL --}}
+                                <div class="modal" id="modal-open-{{ $article->id}}">
+                                    <div class="modal-dialog" role="document">
+                                        <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title">Deleting an item is permanent</h5>
+                                            <button type="button"
+                                                    class="btn-close" 
+                                                    data-bs-dismiss="modal" 
+                                                    aria-label="Close" 
+                                                    onclick="document.getElementById('modal-open-{{ $article->id}}').style.display='none'">
+                                                <span aria-hidden="true"></span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <p>This action will erase the element 
+                                                <strong>{{ $article->id}}: {{ $article->title}}</strong>
+                                                <br>Are you sure?                                            
+                                            </p>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="submit" class="btn btn-primary">Yes</button>
+                                            <a type="button" 
+                                               class="btn btn-secondary" data-bs-dismiss="modal"
+                                               onclick="document.getElementById('modal-open-{{ $article->id}}').style.display='none'">Cancel
+                                            </a>
+                                        </div>
+                                        </div>
+                                    </div>
+                                </div> 
+                                {{-- END MODAL --}}
                             </form>                   
                         </td>
                     </tr>   
-
                 @endforeach
             </tbody>
         </table>
