@@ -26,9 +26,14 @@ Route::get('/articles', [MainController::class, 'index'])->name('articles');
 Route::get('/articles/{article:slug}', [MainController::class, 'show'])->name('article');
 
 // ADMIN ARTICLE
-Route::get('/admin/articles', [ArticleController::class, 'index'])->middleware('admin')->name('articles.index');
-Route::get('/admin/articles/create', [ArticleController::class, 'create'])->middleware('admin')->name('articles.create');
-Route::post('/admin/articles/store', [ArticleController::class, 'store'])->middleware('admin')->name('articles.store');
-Route::get('/admin/articles/{article:id}/edit', [ArticleController::class, 'edit'])->middleware('admin')->name('articles.edit');
-Route::put('/admin/articles/{article:id}/update', [ArticleController::class, 'update'])->middleware('admin')->name('articles.update');
-Route::delete('/admin/articles/{article:id}/delete', [ArticleController::class, 'delete'])->middleware('admin')->name('articles.delete');
+
+Route::prefix('admin')->middleware('admin')->group(function() {
+
+    Route::get('/articles', [ArticleController::class, 'index'])->name('articles.index');
+    Route::get('/articles/create', [ArticleController::class, 'create'])->name('articles.create');
+    Route::post('/articles/store', [ArticleController::class, 'store'])->name('articles.store');
+    Route::get('/articles/{article:id}/edit', [ArticleController::class, 'edit'])->name('articles.edit');
+    Route::put('/articles/{article:id}/update', [ArticleController::class, 'update'])->name('articles.update');
+    Route::delete('/articles/{article:id}/delete', [ArticleController::class, 'delete'])->name('articles.delete');
+
+});
