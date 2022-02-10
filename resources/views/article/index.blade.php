@@ -36,7 +36,7 @@
                                     onclick="document.getElementById('modal-open-{{ $article->id}}').style.display='block' ">Delete
                             </button>
 
-                            <form action="{{ route('articles.delete', $article->id) }}" method="POST">
+                            <form action="{{ route('articles.destroy', $article->id) }}" method="POST">
                                 @csrf
                                 @method("DELETE")                                
                                 {{-- START MODAL --}}
