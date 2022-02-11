@@ -10,8 +10,10 @@
                             <p class="mb-1">{{ $article->subtitle }}</p>
                         <div>                            
                             <a href="{{ route('article', $article->slug) }}" type="link" class="btn btn-warning">Learn more <i class="fas fa-arrow-right"></i></a>
-                        </div> 
+                        </div>  
+                        <span class="badge bg-primary w-15 mt-2">{{ $article->category->label }}</span>
                     </div>  
+                    
                 </div>            
             </div>    
         @endforeach

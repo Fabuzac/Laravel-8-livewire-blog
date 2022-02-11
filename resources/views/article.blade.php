@@ -6,14 +6,16 @@
         <div>
             <div class="m-1">
                 <div class="alert card alert-dismissible alert-warning text-center">
+                    
                     <h1 class="display-6">{{ $article->title }}</h1>     
                     <hr/>
                     <img src="/favicon/livewire.png" alt="" class="m-auto" width="100">               
                     <p class="mb-1 text-danger">{{ $article->subtitle }}</p>   
                     <div class="container">
                         <p class="mb-1">{{ $article->content }}</p>
-                    </div>          
+                    </div>
                 </div>  
+                <span class="badge bg-primary">{{ $article->category->label }}</span>   
             </div>            
         </div>       
     </div>

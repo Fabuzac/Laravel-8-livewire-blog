@@ -3,6 +3,7 @@
 namespace Database\Seeders;
 
 use App\Models\Article;
+use App\Models\Category;
 use Faker\Factory;
 use Illuminate\Database\Seeder;
 
@@ -23,6 +24,7 @@ class ArticleSeeder extends Seeder
                 'title' => $faker->sentence(),
                 'subtitle' => $faker->sentence(),
                 'content' => $faker->text($maxNbChars = 600),
+                'category_id' => Category::inRandomOrder()->first()->id,
             ]);
         }
     }

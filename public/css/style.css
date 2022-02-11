@@ -18,3 +18,7 @@
 .modal-content {
     background-color: #001e1ef0 !important;
 }
+
+.w-15 {
+    width: 15%;
+}
