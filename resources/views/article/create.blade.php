@@ -27,6 +27,7 @@
                     </fieldset>
                 </div>
             </div>   
+
             {{-- SUBTITLE --}}
             <div class="col-12 my-2">
                 <div class="form-group">
@@ -49,6 +50,19 @@
                     @enderror
                 </div>
             </div> 
+
+            {{-- CATEGORIES --}}
+            <div class="col-12">
+                <div class="form-group">
+                    <label class="form-label text-left display-6" for="category">Categories</label>
+                    <select name="category" class="form-control">
+                        @foreach ($categories as $category)
+                            <option value=" {{$category->id}} ">{{$category->label}}</option>
+                        @endforeach
+                    </select>
+                </div>
+            </div>
+
             {{-- CONTENT --}}
             <div class="col-12 my-2">
                 <div class="form-group">

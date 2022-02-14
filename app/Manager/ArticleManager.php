@@ -9,9 +9,11 @@ class ArticleManager
 {
     public function build(Article $article, ArticleRequest $request)
     {
+        
         $article->title = $request->input('title');
         $article->subtitle = $request->input('subtitle');
         $article->content = $request->input('content');
+        $article->category_id = $request->input('category');
         $article->save();
     }
 }
