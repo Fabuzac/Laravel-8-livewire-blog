@@ -13,26 +13,21 @@ class ModelTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testValidRegistration() //Failure
+    public function testValidRegistration()
     {
         $faker = Factory::create();
         $email = $faker->unique()->email;
         $count = User::count();
 
         $response = $this->post('/register', [
+            'name' => 'test',
             'email' => $email,
-            'name' => 'USERSTEST',
-            'password' => Hash::make('123456789'),
-            'role' => User::USER_ROLE,
+            'password' => 'password',
+            'password_confirmation' => 'password',
         ]);
 
-        $newCount = User::count();
-
-        //$this->assertNotEquals($newCount, $count);
-        //$this->withoutExceptionHandling();
-        //dd($response->baseResponse->getContent());
-        //dd($response->getContent());
-        //dd(session('errors'));
+        $newCount = User::count();     
+        $this->assertNotEquals($count, $newCount);
     }
 
 

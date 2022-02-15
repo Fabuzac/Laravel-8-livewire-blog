@@ -12,7 +12,7 @@ class DatabaseTest extends TestCase
 {
     use RefreshDatabase;
 
-    public function testValidRegistration() //Failure
+    public function testValidRegistration()
     {
         $count = User::count();
 
@@ -20,7 +20,7 @@ class DatabaseTest extends TestCase
             'name' => 'test_test',
             'email' => 'email@email.net',
             'password' => 'password',
-            'role' => 'TEST',
+            'password_confirmation' => 'password',
         ]);
 
         $newCount = User::count();
