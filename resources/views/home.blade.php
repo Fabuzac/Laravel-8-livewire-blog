@@ -11,6 +11,7 @@
                 <h5 class="card-title">Litlle TITLE of the card</h5>
                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                 <a href="/articles" type="link" class="btn btn-warning">Learn more <i class="fas fa-arrow-right"></i></a>
+                {{-- @livewire('counter') --}}
             </div> 
         </div>  
     </div>
