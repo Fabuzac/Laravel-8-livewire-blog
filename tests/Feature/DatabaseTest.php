@@ -4,6 +4,7 @@ namespace Tests\Feature;
 
 use Tests\TestCase;
 use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Foundation\Testing\WithFaker;
 use Illuminate\Foundation\Testing\RefreshDatabase;
 
@@ -16,10 +17,10 @@ class DatabaseTest extends TestCase
         $count = User::count();
 
         $response = $this->post('/register', [
-            'name' => 'test',
-            'email' => 'test@test.com',
+            'name' => 'test_test',
+            'email' => 'email@email.net',
             'password' => 'password',
-            'password_confimation' => 'password',
+            'role' => 'TEST',
         ]);
 
         $newCount = User::count();
