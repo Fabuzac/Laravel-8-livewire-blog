@@ -20,6 +20,7 @@
                 @endforeach
             </div>
         </div>  
+
         {{-- CATEGORIES --}}
         <div class="col-2 mt-5">
             @foreach ($categories as $category)
@@ -35,6 +36,7 @@
             @endforeach
         </div>
     </div>
+    
     {{-- PAGINATION --}}
     <div class="text-center" role="toolbar" aria-label="Toolbar with button groups">
         <div class="btn-group me-2" role="group" aria-label="First group">
