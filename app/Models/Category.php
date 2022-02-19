@@ -10,7 +10,9 @@ class Category extends Model
 {
     use HasFactory;
 
-    protected $fillable = [ 'label' ];
+    protected $fillable = [ 
+        'label', 'icon' 
+    ];
 
     public function articles()
     {
