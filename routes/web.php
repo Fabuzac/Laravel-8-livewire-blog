@@ -28,13 +28,13 @@ Route::get('/articles', [MainController::class, 'index'])->name('articles');
 Route::get('/articles/{article:slug}', [MainController::class, 'show'])->name('article');
 
 // ADMIN ARTICLE
-Route::prefix('admin')->middleware('admin')->group(function() {
+// Route::prefix('admin')->middleware('admin')->group(function() {
 
-    Route::resource('articles', ArticleController::class)->except([
-        'show'
-    ]);
+//     Route::resource('articles', ArticleController::class)->except([
+//         'show'
+//     ]);
 
-});
+// });
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
