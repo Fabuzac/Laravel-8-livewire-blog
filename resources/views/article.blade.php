@@ -11,8 +11,9 @@
                     <hr/>
                     <img src="/favicon/livewire.png" alt="" class="m-auto" width="100">               
                     <p class="mb-1 text-danger">{{ $article->subtitle }}</p>   
-                    <div class="container">
-                        <p class="mb-1">{{ $article->content }}</p>
+                    <div class="container row justify-content-center">
+                        <img src="{{ $article->image }}" class="w-25 my-25" alt="default picture">
+                        <p class="mb-1">{{ Markdown::parse($article->content) }}</p>
                     </div>
                 </div>  
                 <span class="badge bg-primary">{{ $article->category->label }}</span>   
