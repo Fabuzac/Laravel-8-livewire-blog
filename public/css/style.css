@@ -22,3 +22,15 @@
 .w-15 {
     width: 15%;
 }
+
+.grid-transformation {
+    display: grid;
+    grid-auto-flow: dense;
+    align-items: stretch;
+    justify-items: stretch;
+    grid-template-columns: repeat(1,1fr);
+}
+
+.no-underline {
+    text-decoration: none;
+}

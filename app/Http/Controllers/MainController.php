@@ -17,7 +17,7 @@ class MainController extends Controller
     {
         
         return view('articles', [
-            'articles' => Article::paginate(4),
+            'articles' => Article::latest()->paginate(4),
             'categories' => Category::all(),
         ]);
     }
@@ -29,8 +29,5 @@ class MainController extends Controller
         return view('article', [
             'article' => $article,
         ]);
-    }
-
-    
-    
+    }   
 }

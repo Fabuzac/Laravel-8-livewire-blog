@@ -21,7 +21,9 @@ Auth::routes();
 Route::get('/', [MainController::class, 'home'])->name('home');
 
 // GUEST SHOP
-Route::get('/shop', [ShopController::class, 'index'])->name('shop.index');
+Route::get('/items', [ShopController::class, 'index'])->name('items');
+Route::get('/items/{item:slug}', [ShopController::class, 'show'])->name('item');
+
 
 // GUEST ARTICLE
 Route::get('/articles', [MainController::class, 'index'])->name('articles');
@@ -29,11 +31,9 @@ Route::get('/articles/{article:slug}', [MainController::class, 'show'])->name('a
 
 // ADMIN ARTICLE
 // Route::prefix('admin')->middleware('admin')->group(function() {
-
 //     Route::resource('articles', ArticleController::class)->except([
 //         'show'
 //     ]);
-
 // });
 
 Route::group(['prefix' => 'admin'], function () {
